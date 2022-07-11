@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  *_puts - puts a string followed by a newline to standard output
  *
