@@ -1,5 +1,5 @@
 /**
- *print_number - prints an arbitrary integer using putchar
+ * print_number - prints an arbitrary integer using putchar
  *
  *@n: integer to print
  *
