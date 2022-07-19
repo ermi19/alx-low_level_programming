@@ -1,32 +1,29 @@
 /**
- *_strspn - search a string for a set of bytes
- *@s: source string
- *@accept: accepted string
+ *_strspn - Returns the number of bytes in the initial segment
+ *of s which consist only of bytes from accept
  *
- *Return: number of bytes in the init segment
+ *@s: string to search
+ *@accept: characters to look for
+ *
+ *Return: number of bytes that matched at start of string
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int a = 0, b, t = 0;
-
-	while (accept[a])
+	unsigned int sum = 0;
+	char *ptr = accept;
+	
+	while (*s != 0)
 	{
-		b = 0;
-
-		while (s[b] != 32)
+		if (*s == *ptr && *ptr != 0)
 		{
-			if (accept[a] == s[b])
-			{
-				t++;
-			}
-		
-
-			b++;
-		
+			sum++;
+			s++;
+			ptr = accept;
 		}
-
-		a++;
+		else
+			ptr++;
+		if (*ptr == 0)
+			return (sum);
 	}
-
-	return (t);
+	return (sum);
 }
